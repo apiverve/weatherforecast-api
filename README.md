@@ -27,11 +27,7 @@ The Weather API provides a simple, reliable way to integrate weather functionali
 ```javascript
 async function callWeatherAPI() {
     try {
-        const params = new URLSearchParams({
-            city: 'San Francisco'
-        });
-
-        const response = await fetch(`https://api.apiverve.com/v1/weatherforecast?${params}`, {
+        const response = await fetch('https://api.apiverve.com/v1/weatherforecast', {
             method: 'GET',
             headers: {
                 'x-api-key': 'YOUR_API_KEY_HERE'
