@@ -12,7 +12,6 @@ namespace APIVerve.API.Weather
     {
         /// <summary>
         /// The city for which you want to get the current weather (e.g., San Francisco)
-        /// Example: San Francisco
         /// </summary>
         [JsonProperty("city")]
         public string City { get; set; }
