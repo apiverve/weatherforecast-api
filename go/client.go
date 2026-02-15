@@ -41,9 +41,22 @@ func (c *Client) SetTimeout(timeout time.Duration) {
 
 
 // Execute makes a request to the Weather API with typed parameters.
+//
+// Parameters are validated before sending the request. If validation fails,
+// an error is returned immediately without making a network request.
+//
+// Available parameters:
+//   - city (required): string - The city for which you want to get the current weather (e.g., San Francisco)
 func (c *Client) Execute(req *Request) (*Response, error) {
 	if c.apiKey == "" {
 		return nil, errors.New("API key is required. Get your API key at: https://apiverve.com")
+	}
+
+	// Validate parameters before making request
+	if req != nil {
+		if err := req.Validate(); err != nil {
+			return nil, err
+		}
 	}
 
 	request := c.httpClient.R().
