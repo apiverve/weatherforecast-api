@@ -231,8 +231,9 @@ from apiverve_weather.apiClient import WeatherforecastAPIClient
 
 api = WeatherforecastAPIClient("[YOUR_API_KEY]")
 
+query = { "city": "San Francisco" }
+
 try:
-    query = { "city": "San Francisco" }
     result = api.execute(query)
     print(result)
 finally:
