@@ -4,31 +4,43 @@ declare module '@apiverve/weatherforecast' {
     secure?: boolean;
   }
 
+  /**
+   * Describes fields the current plan does not unlock. Locked fields arrive as null
+   * in `data`; `locked_fields` names them, using dot paths for nested fields.
+   * Absent when the plan unlocks everything.
+   */
+  export interface PremiumInfo {
+    message: string;
+    upgrade_url: string;
+    locked_fields: string[];
+  }
+
   export interface weatherforecastResponse {
     status: string;
     error: string | null;
     data: WeatherData;
     code?: number;
+    premium?: PremiumInfo;
   }
 
 
   interface WeatherData {
-      tempC:      number;
-      tempF:      number;
-      windMph:    number;
-      windKph:    number;
-      windDegree: number;
-      windDir:    string;
-      pressureMB: number;
-      pressureIn: number;
-      precipMm:   number;
-      precipIn:   number;
-      feelslikeC: number;
-      feelslikeF: number;
-      visKM:      number;
-      visMiles:   number;
-      gustMph:    number;
-      gustKph:    number;
+      tempC:      number | null;
+      tempF:      number | null;
+      windMph:    number | null;
+      windKph:    number | null;
+      windDegree: number | null;
+      windDir:    null | string;
+      pressureMB: number | null;
+      pressureIn: number | null;
+      precipMm:   number | null;
+      precipIn:   number | null;
+      feelslikeC: number | null;
+      feelslikeF: number | null;
+      visKM:      number | null;
+      visMiles:   number | null;
+      gustMph:    number | null;
+      gustKph:    number | null;
   }
 
   export default class weatherforecastWrapper {
