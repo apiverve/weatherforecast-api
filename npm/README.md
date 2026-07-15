@@ -122,22 +122,22 @@ async function makeRequest() {
   "status": "ok",
   "error": null,
   "data": {
-    "tempC": 15.6,
-    "tempF": 60.1,
-    "windMph": 4.9,
-    "windKph": 7.9,
-    "windDegree": 315,
-    "windDir": "NW",
-    "pressureMb": 1021,
-    "pressureIn": 30.16,
+    "tempC": 13.3,
+    "tempF": 55.9,
+    "windMph": 4.7,
+    "windKph": 7.6,
+    "windDegree": 273,
+    "windDir": "W",
+    "pressureMb": 1022,
+    "pressureIn": 30.17,
     "precipMm": 0,
     "precipIn": 0,
-    "feelslikeC": 15.6,
-    "feelslikeF": 60.1,
+    "feelslikeC": 13,
+    "feelslikeF": 55.3,
     "visKm": 16,
     "visMiles": 9,
-    "gustMph": 6.6,
-    "gustKph": 10.5
+    "gustMph": 7.2,
+    "gustKph": 11.6
   }
 }
 ```
