@@ -51,7 +51,7 @@ Here's a simple example to get you started quickly:
 
 ```csharp
 using System;
-using APIVerve;
+using APIVerve.API.Weather;
 
 class Program
 {
@@ -60,8 +60,8 @@ class Program
         // Initialize the API client
         var apiClient = new WeatherAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    city = "San Francisco"
+        var queryOptions = new WeatherQueryOptions {
+    City = "San Francisco"
 };
 
         // Make the API call
@@ -116,7 +116,7 @@ The modern async/await pattern provides the best performance and code readabilit
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.Weather;
 
 public class Example
 {
@@ -124,8 +124,8 @@ public class Example
     {
         var apiClient = new WeatherAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    city = "San Francisco"
+        var queryOptions = new WeatherQueryOptions {
+    City = "San Francisco"
 };
 
         var response = await apiClient.ExecuteAsync(queryOptions);
@@ -148,7 +148,7 @@ If you need to use synchronous code, you can use the `Execute` method:
 
 ```csharp
 using System;
-using APIVerve;
+using APIVerve.API.Weather;
 
 public class Example
 {
@@ -156,8 +156,8 @@ public class Example
     {
         var apiClient = new WeatherAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    city = "San Francisco"
+        var queryOptions = new WeatherQueryOptions {
+    City = "San Francisco"
 };
 
         var response = apiClient.Execute(queryOptions);
@@ -185,7 +185,7 @@ The API client provides comprehensive error handling. Here are some examples:
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.Weather;
 
 public class Example
 {
@@ -193,8 +193,8 @@ public class Example
     {
         var apiClient = new WeatherAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    city = "San Francisco"
+        var queryOptions = new WeatherQueryOptions {
+    City = "San Francisco"
 };
 
         try
@@ -237,7 +237,7 @@ public class Example
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.Weather;
 
 public class Example
 {
@@ -249,8 +249,8 @@ public class Example
         apiClient.SetMaxRetries(3);        // Retry up to 3 times (default: 0, max: 3)
         apiClient.SetRetryDelay(2000);     // Wait 2 seconds between retries
 
-        var queryOptions = new QueryOptions {
-    city = "San Francisco"
+        var queryOptions = new WeatherQueryOptions {
+    City = "San Francisco"
 };
 
         try
@@ -290,8 +290,8 @@ var apiClient = new WeatherAPIClient("[YOUR_API_KEY]");
 apiClient.AddCustomHeader("X-Custom-Header", "custom-value");
 apiClient.AddCustomHeader("X-Request-ID", Guid.NewGuid().ToString());
 
-var queryOptions = new QueryOptions {
-    city = "San Francisco"
+var queryOptions = new WeatherQueryOptions {
+    City = "San Francisco"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -316,8 +316,8 @@ apiClient.SetLogger(message =>
     Console.WriteLine($"[LOG] {DateTime.Now:yyyy-MM-dd HH:mm:ss} - {message}");
 });
 
-var queryOptions = new QueryOptions {
-    city = "San Francisco"
+var queryOptions = new WeatherQueryOptions {
+    City = "San Francisco"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -334,8 +334,8 @@ var apiClient = new WeatherAPIClient("[YOUR_API_KEY]");
 apiClient.SetMaxRetries(3);           // Retry up to 3 times (default: 0, max: 3)
 apiClient.SetRetryDelay(1500);        // Wait 1.5 seconds between retries (default: 1000ms)
 
-var queryOptions = new QueryOptions {
-    city = "San Francisco"
+var queryOptions = new WeatherQueryOptions {
+    City = "San Francisco"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -346,8 +346,8 @@ var response = await apiClient.ExecuteAsync(queryOptions);
 The API client implements `IDisposable` for proper resource cleanup:
 
 ```csharp
-var queryOptions = new QueryOptions {
-    city = "San Francisco"
+var queryOptions = new WeatherQueryOptions {
+    City = "San Francisco"
 };
 
 using (var apiClient = new WeatherAPIClient("[YOUR_API_KEY]"))
@@ -367,22 +367,22 @@ using (var apiClient = new WeatherAPIClient("[YOUR_API_KEY]"))
   "status": "ok",
   "error": null,
   "data": {
-    "tempC": 15.6,
-    "tempF": 60.1,
-    "windMph": 4.9,
-    "windKph": 7.9,
-    "windDegree": 315,
-    "windDir": "NW",
-    "pressureMb": 1021,
-    "pressureIn": 30.16,
+    "tempC": 13.3,
+    "tempF": 55.9,
+    "windMph": 4.7,
+    "windKph": 7.6,
+    "windDegree": 273,
+    "windDir": "W",
+    "pressureMb": 1022,
+    "pressureIn": 30.17,
     "precipMm": 0,
     "precipIn": 0,
-    "feelslikeC": 15.6,
-    "feelslikeF": 60.1,
+    "feelslikeC": 13,
+    "feelslikeF": 55.3,
     "visKm": 16,
     "visMiles": 9,
-    "gustMph": 6.6,
-    "gustKph": 10.5
+    "gustMph": 7.2,
+    "gustKph": 11.6
   }
 }
 ```
