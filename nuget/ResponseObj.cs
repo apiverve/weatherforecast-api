@@ -25,56 +25,71 @@ namespace APIVerve.API.Weather
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
     {
         [JsonProperty("tempC")]
-        public double TempC { get; set; }
+        public double? TempC { get; set; }
 
         [JsonProperty("tempF")]
-        public double TempF { get; set; }
+        public double? TempF { get; set; }
 
         [JsonProperty("windMph")]
-        public double WindMph { get; set; }
+        public double? WindMph { get; set; }
 
         [JsonProperty("windKph")]
-        public double WindKph { get; set; }
+        public double? WindKph { get; set; }
 
         [JsonProperty("windDegree")]
-        public long WindDegree { get; set; }
+        public long? WindDegree { get; set; }
 
         [JsonProperty("windDir")]
         public string WindDir { get; set; }
 
         [JsonProperty("pressureMb")]
-        public long PressureMb { get; set; }
+        public long? PressureMb { get; set; }
 
         [JsonProperty("pressureIn")]
-        public double PressureIn { get; set; }
+        public double? PressureIn { get; set; }
 
         [JsonProperty("precipMm")]
-        public long PrecipMm { get; set; }
+        public long? PrecipMm { get; set; }
 
         [JsonProperty("precipIn")]
-        public long PrecipIn { get; set; }
+        public long? PrecipIn { get; set; }
 
         [JsonProperty("feelslikeC")]
-        public double FeelslikeC { get; set; }
+        public long? FeelslikeC { get; set; }
 
         [JsonProperty("feelslikeF")]
-        public double FeelslikeF { get; set; }
+        public double? FeelslikeF { get; set; }
 
         [JsonProperty("visKm")]
-        public long VisKm { get; set; }
+        public long? VisKm { get; set; }
 
         [JsonProperty("visMiles")]
-        public long VisMiles { get; set; }
+        public long? VisMiles { get; set; }
 
         [JsonProperty("gustMph")]
-        public double GustMph { get; set; }
+        public double? GustMph { get; set; }
 
         [JsonProperty("gustKph")]
-        public double GustKph { get; set; }
+        public double? GustKph { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
