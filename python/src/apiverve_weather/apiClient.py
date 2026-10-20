@@ -1,6 +1,6 @@
 import re
-from typing import Dict, Optional, Any
-from dataclasses import dataclass, List
+from typing import Dict, Optional, Any, List
+from dataclasses import dataclass
 import requests
 
 
@@ -24,7 +24,8 @@ class ValidationError(WeatherforecastAPIClientError):
 class WeatherforecastAPIClient:
     # Validation rules for parameters (generated from schema)
     VALIDATION_RULES = {
-        "city": {"type": "string", "required": True}
+        "city": {"type": "string", "required": True},
+        "forecast": {"type": "boolean", "required": False}
     }
 
     # Format validation patterns
