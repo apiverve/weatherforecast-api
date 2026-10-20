@@ -79,6 +79,96 @@ namespace APIVerve.API.Weather
 
         [JsonProperty("gustKph")]
         public double? GustKph { get; set; }
+
+        [JsonProperty("forecast")]
+        public Forecast[] Forecast { get; set; }
+
+        [JsonProperty("forecastSummary")]
+        public ForecastSummary ForecastSummary { get; set; }
+    }
+
+    public partial class Forecast
+    {
+        [JsonProperty("date")]
+        public DateTimeOffset? Date { get; set; }
+
+        [JsonProperty("condition")]
+        public string Condition { get; set; }
+
+        [JsonProperty("maxtempC")]
+        public double? MaxtempC { get; set; }
+
+        [JsonProperty("maxtempF")]
+        public double? MaxtempF { get; set; }
+
+        [JsonProperty("mintempC")]
+        public double? MintempC { get; set; }
+
+        [JsonProperty("mintempF")]
+        public double? MintempF { get; set; }
+
+        [JsonProperty("avgtempC")]
+        public double? AvgtempC { get; set; }
+
+        [JsonProperty("avgtempF")]
+        public double? AvgtempF { get; set; }
+
+        [JsonProperty("maxwindMph")]
+        public double? MaxwindMph { get; set; }
+
+        [JsonProperty("maxwindKph")]
+        public double? MaxwindKph { get; set; }
+
+        [JsonProperty("avghumidity")]
+        public long? Avghumidity { get; set; }
+
+        [JsonProperty("uv")]
+        public double? Uv { get; set; }
+
+        [JsonProperty("willItRain")]
+        public long? WillItRain { get; set; }
+
+        [JsonProperty("chanceOfRain")]
+        public long? ChanceOfRain { get; set; }
+
+        [JsonProperty("willItSnow")]
+        public long? WillItSnow { get; set; }
+
+        [JsonProperty("chanceOfSnow")]
+        public long? ChanceOfSnow { get; set; }
+
+        [JsonProperty("totalprecipMm")]
+        public double? TotalprecipMm { get; set; }
+
+        [JsonProperty("totalprecipIn")]
+        public double? TotalprecipIn { get; set; }
+
+        [JsonProperty("totalsnowCm")]
+        public long? TotalsnowCm { get; set; }
+
+        [JsonProperty("avgvisKm")]
+        public double? AvgvisKm { get; set; }
+
+        [JsonProperty("avgvisMiles")]
+        public long? AvgvisMiles { get; set; }
+    }
+
+    public partial class ForecastSummary
+    {
+        [JsonProperty("rainExpectedOn")]
+        public DateTimeOffset? RainExpectedOn { get; set; }
+
+        [JsonProperty("daysWithRain")]
+        public long? DaysWithRain { get; set; }
+
+        [JsonProperty("tempTrend")]
+        public string TempTrend { get; set; }
+
+        [JsonProperty("tempTrendC")]
+        public double? TempTrendC { get; set; }
+
+        [JsonProperty("maxChanceOfRain")]
+        public long? MaxChanceOfRain { get; set; }
     }
 
     public partial class Premium

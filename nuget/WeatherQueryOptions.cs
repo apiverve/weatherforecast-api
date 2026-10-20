@@ -15,5 +15,11 @@ namespace APIVerve.API.Weather
         /// </summary>
         [JsonProperty("city")]
         public string City { get; set; }
+
+        /// <summary>
+        /// Included by default. Set to false to omit the 7-day forecast and return current conditions only.
+        /// </summary>
+        [JsonProperty("forecast")]
+        public bool? Forecast { get; set; }
     }
 }
