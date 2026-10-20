@@ -2,8 +2,10 @@ openapi: 3.0.4
 info:
   title: Weather
   description: >-
-    Weather is a simple tool for getting the current weather. It returns the
-    temperature, humidity, and more for a given location.
+    Weather is a current weather API that reports conditions for any city name
+    or zip code: real-time temperature and wind speed with compass direction, in
+    both metric and imperial units. Paid plans add a 7-day forecast with daily
+    highs, lows, rain chance and conditions for the week ahead.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -18,7 +20,7 @@ servers:
 paths:
   /v1/weatherforecast:
     get:
-      summary: Get Current Weather by City
+      summary: Weather
       description: Get the current weather for a given location
       operationId: weatherforecast
       parameters:
@@ -31,6 +33,15 @@ paths:
             The city for which you want to get the current weather (e.g., San
             Francisco)
           example: San Francisco
+        - name: forecast
+          in: query
+          schema:
+            type: boolean
+          required: false
+          description: >-
+            Included by default. Set to false to omit the 7-day forecast and
+            return current conditions only.
+          example: true
       responses:
         '200':
           description: Successful Response
@@ -68,6 +79,160 @@ paths:
                   visMiles: 9
                   gustMph: 7.2
                   gustKph: 11.6
+                  forecast:
+                    - date: '2026-09-21'
+                      condition: Sunny
+                      maxtempC: 22.5
+                      maxtempF: 72.5
+                      mintempC: 13.3
+                      mintempF: 56
+                      avgtempC: 17.7
+                      avgtempF: 63.9
+                      maxwindMph: 4.7
+                      maxwindKph: 7.6
+                      avghumidity: 48
+                      uv: 4
+                      willItRain: 0
+                      chanceOfRain: 4
+                      willItSnow: 0
+                      chanceOfSnow: 0
+                      totalprecipMm: 0
+                      totalprecipIn: 0
+                      totalsnowCm: 0
+                      avgvisKm: 10
+                      avgvisMiles: 6
+                    - date: '2026-09-22'
+                      condition: Sunny
+                      maxtempC: 22.8
+                      maxtempF: 73
+                      mintempC: 16.5
+                      mintempF: 61.7
+                      avgtempC: 19.7
+                      avgtempF: 67.5
+                      maxwindMph: 4.7
+                      maxwindKph: 7.6
+                      avghumidity: 63
+                      uv: 3.9
+                      willItRain: 0
+                      chanceOfRain: 8
+                      willItSnow: 0
+                      chanceOfSnow: 0
+                      totalprecipMm: 0.02
+                      totalprecipIn: 0
+                      totalsnowCm: 0
+                      avgvisKm: 10
+                      avgvisMiles: 6
+                    - date: '2026-09-23'
+                      condition: Overcast
+                      maxtempC: 22.8
+                      maxtempF: 73.1
+                      mintempC: 14.1
+                      mintempF: 57.4
+                      avgtempC: 18.4
+                      avgtempF: 65.2
+                      maxwindMph: 15.7
+                      maxwindKph: 25.2
+                      avghumidity: 70
+                      uv: 3.1
+                      willItRain: 1
+                      chanceOfRain: 76
+                      willItSnow: 0
+                      chanceOfSnow: 0
+                      totalprecipMm: 5.97
+                      totalprecipIn: 0.23
+                      totalsnowCm: 0
+                      avgvisKm: 9.9
+                      avgvisMiles: 6
+                    - date: '2026-09-24'
+                      condition: Partly Cloudy
+                      maxtempC: 18
+                      maxtempF: 64.5
+                      mintempC: 10.5
+                      mintempF: 50.8
+                      avgtempC: 14.3
+                      avgtempF: 57.7
+                      maxwindMph: 11
+                      maxwindKph: 17.6
+                      avghumidity: 64
+                      uv: 3.5
+                      willItRain: 0
+                      chanceOfRain: 11
+                      willItSnow: 0
+                      chanceOfSnow: 0
+                      totalprecipMm: 0.03
+                      totalprecipIn: 0
+                      totalsnowCm: 0
+                      avgvisKm: 10
+                      avgvisMiles: 6
+                    - date: '2026-09-25'
+                      condition: Sunny
+                      maxtempC: 21.3
+                      maxtempF: 70.3
+                      mintempC: 12
+                      mintempF: 53.6
+                      avgtempC: 16
+                      avgtempF: 60.8
+                      maxwindMph: 6.5
+                      maxwindKph: 10.4
+                      avghumidity: 56
+                      uv: 6
+                      willItRain: 0
+                      chanceOfRain: 4
+                      willItSnow: 0
+                      chanceOfSnow: 0
+                      totalprecipMm: 0
+                      totalprecipIn: 0
+                      totalsnowCm: 0
+                      avgvisKm: 10
+                      avgvisMiles: 6
+                    - date: '2026-09-26'
+                      condition: Sunny
+                      maxtempC: 22
+                      maxtempF: 71.5
+                      mintempC: 13
+                      mintempF: 55.3
+                      avgtempC: 17.1
+                      avgtempF: 62.8
+                      maxwindMph: 8.9
+                      maxwindKph: 14.4
+                      avghumidity: 62
+                      uv: 6
+                      willItRain: 0
+                      chanceOfRain: 8
+                      willItSnow: 0
+                      chanceOfSnow: 0
+                      totalprecipMm: 0
+                      totalprecipIn: 0
+                      totalsnowCm: 0
+                      avgvisKm: 10
+                      avgvisMiles: 6
+                    - date: '2026-09-27'
+                      condition: Overcast
+                      maxtempC: 19.3
+                      maxtempF: 66.8
+                      mintempC: 12.8
+                      mintempF: 55.1
+                      avgtempC: 16.3
+                      avgtempF: 61.3
+                      maxwindMph: 6.9
+                      maxwindKph: 11.2
+                      avghumidity: 67
+                      uv: 4
+                      willItRain: 0
+                      chanceOfRain: 36
+                      willItSnow: 0
+                      chanceOfSnow: 0
+                      totalprecipMm: 0.32
+                      totalprecipIn: 0.01
+                      totalsnowCm: 0
+                      avgvisKm: 10
+                      avgvisMiles: 6
+                  forecastSummary:
+                    rainExpectedOn: '2026-09-23'
+                    daysWithRain: 1
+                    tempTrend: cooling
+                    tempTrendC: -2.1
+                    maxChanceOfRain: 76
         '401':
           description: Your request was not authorized, or your API Key was invalid
         '404':

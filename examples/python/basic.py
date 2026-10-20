@@ -18,7 +18,7 @@ def call_weatherforecast_api():
     """
     try:
         # Query parameters
-        params &#x3D; {&#x27;city&#x27;: &#x27;San Francisco&#x27;}
+        params &#x3D; {&#x27;city&#x27;: &#x27;San Francisco&#x27;, &#x27;forecast&#x27;: true}
 
         headers = {
             'x-api-key': API_KEY
