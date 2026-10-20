@@ -30,7 +30,7 @@ class weatherforecastWrapper {
         this.baseURL = 'https://api.apiverve.com/v1/weatherforecast';
 
         // Validation rules for parameters (generated from schema)
-        this.validationRules = {"city":{"type":"string","required":true}};
+        this.validationRules = {"city":{"type":"string","required":true},"forecast":{"type":"boolean","required":false}};
     }
 
     /**

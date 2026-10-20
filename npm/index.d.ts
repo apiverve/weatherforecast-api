@@ -25,22 +25,56 @@ declare module '@apiverve/weatherforecast' {
 
 
   interface WeatherData {
-      tempC:      number | null;
-      tempF:      number | null;
-      windMph:    number | null;
-      windKph:    number | null;
-      windDegree: number | null;
-      windDir:    null | string;
-      pressureMB: number | null;
-      pressureIn: number | null;
-      precipMm:   number | null;
-      precipIn:   number | null;
-      feelslikeC: number | null;
-      feelslikeF: number | null;
-      visKM:      number | null;
-      visMiles:   number | null;
-      gustMph:    number | null;
-      gustKph:    number | null;
+      tempC:           number | null;
+      tempF:           number | null;
+      windMph:         number | null;
+      windKph:         number | null;
+      windDegree:      number | null;
+      windDir:         null | string;
+      pressureMB:      number | null;
+      pressureIn:      number | null;
+      precipMm:        number | null;
+      precipIn:        number | null;
+      feelslikeC:      number | null;
+      feelslikeF:      number | null;
+      visKM:           number | null;
+      visMiles:        number | null;
+      gustMph:         number | null;
+      gustKph:         number | null;
+      forecast:        Forecast[];
+      forecastSummary: ForecastSummary;
+  }
+  
+  interface Forecast {
+      date:          Date | null;
+      condition:     null | string;
+      maxtempC:      number | null;
+      maxtempF:      number | null;
+      mintempC:      number | null;
+      mintempF:      number | null;
+      avgtempC:      number | null;
+      avgtempF:      number | null;
+      maxwindMph:    number | null;
+      maxwindKph:    number | null;
+      avghumidity:   number | null;
+      uv:            number | null;
+      willItRain:    number | null;
+      chanceOfRain:  number | null;
+      willItSnow:    number | null;
+      chanceOfSnow:  number | null;
+      totalprecipMm: number | null;
+      totalprecipIn: number | null;
+      totalsnowCM:   number | null;
+      avgvisKM:      number | null;
+      avgvisMiles:   number | null;
+  }
+  
+  interface ForecastSummary {
+      rainExpectedOn:  Date | null;
+      daysWithRain:    number | null;
+      tempTrend:       null | string;
+      tempTrendC:      number | null;
+      maxChanceOfRain: number | null;
   }
 
   export default class weatherforecastWrapper {
