@@ -50,6 +50,15 @@ namespace APIVerve.API.Weather
         [JsonProperty("windDir")]
         public string WindDir { get; set; }
 
+        [JsonProperty("isDay")]
+        public bool? IsDay { get; set; }
+
+        [JsonProperty("uvRisk")]
+        public string UvRisk { get; set; }
+
+        [JsonProperty("location")]
+        public Location Location { get; set; }
+
         [JsonProperty("pressureMb")]
         public long? PressureMb { get; set; }
 
@@ -169,6 +178,30 @@ namespace APIVerve.API.Weather
 
         [JsonProperty("maxChanceOfRain")]
         public long? MaxChanceOfRain { get; set; }
+    }
+
+    public partial class Location
+    {
+        [JsonProperty("name")]
+        public string Name { get; set; }
+
+        [JsonProperty("region")]
+        public string Region { get; set; }
+
+        [JsonProperty("country")]
+        public string Country { get; set; }
+
+        [JsonProperty("latitude")]
+        public double? Latitude { get; set; }
+
+        [JsonProperty("longitude")]
+        public double? Longitude { get; set; }
+
+        [JsonProperty("timezone")]
+        public string Timezone { get; set; }
+
+        [JsonProperty("localTime")]
+        public string LocalTime { get; set; }
     }
 
     public partial class Premium

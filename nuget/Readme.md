@@ -1,7 +1,7 @@
 Weather API
 ============
 
-Weather is a current weather API that reports conditions for any city name or zip code: real-time temperature and wind speed with compass direction, in both metric and imperial units. Paid plans add a 7-day forecast with daily highs, lows, rain chance and conditions for the week ahead.
+Weather is a current weather API that reports conditions for any city name or zip code: real-time temperature and wind speed with compass direction, in both metric and imperial units, with the location's coordinates, time zone and local time, day or night, and a UV risk level. Paid plans add a 7-day forecast with daily highs, lows, rain chance and conditions for the week ahead.
 
 
 [![NuGet version](https://img.shields.io/nuget/v/APIVerve.API.Weather.svg)](https://www.nuget.org/packages/APIVerve.API.Weather)
@@ -381,6 +381,17 @@ using (var apiClient = new WeatherAPIClient("[YOUR_API_KEY]"))
     "windKph": 7.6,
     "windDegree": 273,
     "windDir": "W",
+    "isDay": false,
+    "uvRisk": "low",
+    "location": {
+      "name": "San Francisco",
+      "region": "California",
+      "country": "United States of America",
+      "latitude": 37.775,
+      "longitude": -122.4183,
+      "timezone": "America/Los_Angeles",
+      "localTime": "2026-10-27T21:05"
+    },
     "pressureMb": 1022,
     "pressureIn": 30.17,
     "precipMm": 0,
