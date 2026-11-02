@@ -31,6 +31,9 @@ declare module '@apiverve/weatherforecast' {
       windKph:         number | null;
       windDegree:      number | null;
       windDir:         null | string;
+      isDay:           boolean | null;
+      uvRisk:          null | string;
+      location:        Location;
       pressureMB:      number | null;
       pressureIn:      number | null;
       precipMm:        number | null;
@@ -75,6 +78,16 @@ declare module '@apiverve/weatherforecast' {
       tempTrend:       null | string;
       tempTrendC:      number | null;
       maxChanceOfRain: number | null;
+  }
+  
+  interface Location {
+      name:      null | string;
+      region:    null | string;
+      country:   null | string;
+      latitude:  number | null;
+      longitude: number | null;
+      timezone:  null | string;
+      localTime: null | string;
   }
 
   export default class weatherforecastWrapper {

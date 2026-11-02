@@ -1,7 +1,7 @@
 {
   "name": "@apiverve/weatherforecast",
-  "version": "1.2.3",
-  "description": "Weather is a current weather API that reports conditions for any city name or zip code: real-time temperature and wind speed with compass direction, in both metric and imperial units. Paid plans add a 7-day forecast with daily highs, lows, rain chance and conditions for the week ahead.",
+  "version": "1.2.4",
+  "description": "Weather is a current weather API that reports conditions for any city name or zip code: real-time temperature and wind speed with compass direction, in both metric and imperial units, with the location's coordinates, time zone and local time, day or night, and a UV risk level. Paid plans add a 7-day forecast with daily highs, lows, rain chance and conditions for the week ahead.",
   "main": "index.js",
   "types": "index.d.ts",
   "sideEffects": false,
