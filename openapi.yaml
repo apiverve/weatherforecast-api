@@ -7,7 +7,7 @@ info:
     both metric and imperial units, with the location's coordinates, time zone
     and local time, day or night, and a UV risk level. Paid plans add a 7-day
     forecast with daily highs, lows, rain chance and conditions for the week
-    ahead.
+    ahead, and an optional hourly forecast.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -33,7 +33,10 @@ paths:
           required: true
           description: >-
             The city for which you want to get the current weather (e.g., San
-            Francisco)
+            Francisco). A name shared by several places resolves to the
+            best-known one (London is London, UK); add a state, province or
+            country after a comma to pick another (e.g., Portland, Maine or
+            London, Ontario)
           example: San Francisco
         - name: forecast
           in: query
@@ -43,6 +46,15 @@ paths:
           description: >-
             Included by default. Set to false to omit the 7-day forecast and
             return current conditions only.
+          example: true
+        - name: hourly
+          in: query
+          schema:
+            type: boolean
+          required: false
+          description: >-
+            Set to true to add an hourly forecast: every hour from now through
+            the end of the 7-day window.
           example: true
       responses:
         '200':

@@ -1,6 +1,6 @@
 # [Weather API](https://apiverve.com/marketplace/weatherforecast?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-Weather is a current weather API that reports conditions for any city name or zip code: real-time temperature and wind speed with compass direction, in both metric and imperial units, with the location&#x27;s coordinates, time zone and local time, day or night, and a UV risk level. Paid plans add a 7-day forecast with daily highs, lows, rain chance and conditions for the week ahead.
+Weather is a current weather API that reports conditions for any city name or zip code: real-time temperature and wind speed with compass direction, in both metric and imperial units, with the location&#x27;s coordinates, time zone and local time, day or night, and a UV risk level. Paid plans add a 7-day forecast with daily highs, lows, rain chance and conditions for the week ahead, and an optional hourly forecast.
 
 The Weather API provides a simple, reliable way to integrate weather functionality into your applications. Built for developers who need production-ready weather capabilities without the complexity of building from scratch.
 
