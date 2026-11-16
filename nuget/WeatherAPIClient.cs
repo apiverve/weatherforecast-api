@@ -68,7 +68,8 @@ namespace APIVerve.API.Weather
         private static readonly Dictionary<string, ValidationRule> _validationRules = new Dictionary<string, ValidationRule>
         {
             { "city", new ValidationRule { Type = "string", Required = true } },
-            { "forecast", new ValidationRule { Type = "boolean", Required = false } }
+            { "forecast", new ValidationRule { Type = "boolean", Required = false } },
+            { "hourly", new ValidationRule { Type = "boolean", Required = false } }
         };
 
         /// <summary>Format validation patterns</summary>

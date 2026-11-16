@@ -1,7 +1,7 @@
 Weather API
 ============
 
-Weather is a current weather API that reports conditions for any city name or zip code: real-time temperature and wind speed with compass direction, in both metric and imperial units, with the location's coordinates, time zone and local time, day or night, and a UV risk level. Paid plans add a 7-day forecast with daily highs, lows, rain chance and conditions for the week ahead.
+Weather is a current weather API that reports conditions for any city name or zip code: real-time temperature and wind speed with compass direction, in both metric and imperial units, with the location's coordinates, time zone and local time, day or night, and a UV risk level. Paid plans add a 7-day forecast with daily highs, lows, rain chance and conditions for the week ahead, and an optional hourly forecast.
 
 
 [![NuGet version](https://img.shields.io/nuget/v/APIVerve.API.Weather.svg)](https://www.nuget.org/packages/APIVerve.API.Weather)
@@ -61,7 +61,8 @@ class Program
 
         var queryOptions = new WeatherQueryOptions {
             City = "San Francisco",
-            Forecast = true
+            Forecast = true,
+            Hourly = true
         };
 
         // Make the API call
@@ -126,7 +127,8 @@ public class Example
 
         var queryOptions = new WeatherQueryOptions {
             City = "San Francisco",
-            Forecast = true
+            Forecast = true,
+            Hourly = true
         };
 
         var response = await apiClient.ExecuteAsync(queryOptions);
@@ -159,7 +161,8 @@ public class Example
 
         var queryOptions = new WeatherQueryOptions {
             City = "San Francisco",
-            Forecast = true
+            Forecast = true,
+            Hourly = true
         };
 
         var response = apiClient.Execute(queryOptions);
@@ -197,7 +200,8 @@ public class Example
 
         var queryOptions = new WeatherQueryOptions {
             City = "San Francisco",
-            Forecast = true
+            Forecast = true,
+            Hourly = true
         };
 
         try
@@ -254,7 +258,8 @@ public class Example
 
         var queryOptions = new WeatherQueryOptions {
             City = "San Francisco",
-            Forecast = true
+            Forecast = true,
+            Hourly = true
         };
 
         try
@@ -296,7 +301,8 @@ apiClient.AddCustomHeader("X-Request-ID", Guid.NewGuid().ToString());
 
 var queryOptions = new WeatherQueryOptions {
     City = "San Francisco",
-    Forecast = true
+    Forecast = true,
+    Hourly = true
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -323,7 +329,8 @@ apiClient.SetLogger(message =>
 
 var queryOptions = new WeatherQueryOptions {
     City = "San Francisco",
-    Forecast = true
+    Forecast = true,
+    Hourly = true
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -342,7 +349,8 @@ apiClient.SetRetryDelay(1500);        // Wait 1.5 seconds between retries (defau
 
 var queryOptions = new WeatherQueryOptions {
     City = "San Francisco",
-    Forecast = true
+    Forecast = true,
+    Hourly = true
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -355,7 +363,8 @@ The API client implements `IDisposable` for proper resource cleanup:
 ```csharp
 var queryOptions = new WeatherQueryOptions {
     City = "San Francisco",
-    Forecast = true
+    Forecast = true,
+    Hourly = true
 };
 
 using (var apiClient = new WeatherAPIClient("[YOUR_API_KEY]"))
