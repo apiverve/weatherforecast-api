@@ -25,7 +25,8 @@ class WeatherforecastAPIClient:
     # Validation rules for parameters (generated from schema)
     VALIDATION_RULES = {
         "city": {"type": "string", "required": True},
-        "forecast": {"type": "boolean", "required": False}
+        "forecast": {"type": "boolean", "required": False},
+        "hourly": {"type": "boolean", "required": False, "default": False}
     }
 
     # Format validation patterns

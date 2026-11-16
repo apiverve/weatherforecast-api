@@ -1,7 +1,7 @@
 Weather API
 ============
 
-Weather is a current weather API that reports conditions for any city name or zip code: real-time temperature and wind speed with compass direction, in both metric and imperial units, with the location's coordinates, time zone and local time, day or night, and a UV risk level. Paid plans add a 7-day forecast with daily highs, lows, rain chance and conditions for the week ahead.
+Weather is a current weather API that reports conditions for any city name or zip code: real-time temperature and wind speed with compass direction, in both metric and imperial units, with the location's coordinates, time zone and local time, day or night, and a UV risk level. Paid plans add a 7-day forecast with daily highs, lows, rain chance and conditions for the week ahead, and an optional hourly forecast.
 
 
 [![PyPI version](https://img.shields.io/pypi/v/apiverve-weather.svg)](https://pypi.org/project/apiverve-weather/)
@@ -45,7 +45,8 @@ api = WeatherforecastAPIClient("[YOUR_API_KEY]")
 
 query = {
     "city": "San Francisco",
-    "forecast": true
+    "forecast": true,
+    "hourly": true
 }
 
 try:
@@ -86,7 +87,8 @@ Using the API client, you can perform requests to the API.
 ```python
 query = {
     "city": "San Francisco",
-    "forecast": true
+    "forecast": true,
+    "hourly": true
 }
 ```
 
@@ -323,7 +325,8 @@ api = WeatherforecastAPIClient("[YOUR_API_KEY]")
 
 query = {
     "city": "San Francisco",
-    "forecast": true
+    "forecast": true,
+    "hourly": true
 }
 
 try:
@@ -347,7 +350,8 @@ api = WeatherforecastAPIClient("[YOUR_API_KEY]")
 
 query = {
     "city": "San Francisco",
-    "forecast": true
+    "forecast": true,
+    "hourly": true
 }
 
 try:
@@ -384,7 +388,8 @@ from apiverve_weather.apiClient import WeatherforecastAPIClient, Weatherforecast
 
 query = {
     "city": "San Francisco",
-    "forecast": true
+    "forecast": true,
+    "hourly": true
 }
 
 # Using context manager ensures proper cleanup
@@ -413,7 +418,8 @@ api = WeatherforecastAPIClient("[YOUR_API_KEY]", debug=True)
 
 query = {
     "city": "San Francisco",
-    "forecast": true
+    "forecast": true,
+    "hourly": true
 }
 
 # Debug information will be printed to console
@@ -431,7 +437,8 @@ api = WeatherforecastAPIClient("[YOUR_API_KEY]")
 
 query = {
     "city": "San Francisco",
-    "forecast": true
+    "forecast": true,
+    "hourly": true
 }
 
 try:
