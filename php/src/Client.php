@@ -15,7 +15,7 @@ use APIVerve\Weatherforecast\Exceptions\ValidationException;
  * @example Basic usage
  * ```php
  * $client = new Client('your_api_key');
- * $response = $client->execute(['city' => 'San Francisco', 'forecast' => true]);
+ * $response = $client->execute(['city' => 'San Francisco', 'forecast' => true, 'hourly' => true]);
  * print_r($response);
  * ```
  *
@@ -35,7 +35,8 @@ class Client
      */
     private const VALIDATION_RULES = [
         'city' => ['type' => 'string', 'required' => true],
-        'forecast' => ['type' => 'boolean', 'required' => false]
+        'forecast' => ['type' => 'boolean', 'required' => false],
+        'hourly' => ['type' => 'boolean', 'required' => false]
     ];
 
     /**

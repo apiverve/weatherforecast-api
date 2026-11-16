@@ -1,6 +1,6 @@
 # Weather API - PHP Package
 
-Weather is a current weather API that reports conditions for any city name or zip code: real-time temperature and wind speed with compass direction, in both metric and imperial units, with the location's coordinates, time zone and local time, day or night, and a UV risk level. Paid plans add a 7-day forecast with daily highs, lows, rain chance and conditions for the week ahead.
+Weather is a current weather API that reports conditions for any city name or zip code: real-time temperature and wind speed with compass direction, in both metric and imperial units, with the location's coordinates, time zone and local time, day or night, and a UV risk level. Paid plans add a 7-day forecast with daily highs, lows, rain chance and conditions for the week ahead, and an optional hourly forecast.
 
 ## Installation
 
@@ -29,7 +29,8 @@ $client = new Client('YOUR_API_KEY');
 // Make a request
 $response = $client->execute([
     'city' => 'San Francisco',
-    'forecast' => true
+    'forecast' => true,
+    'hourly' => true
 ]);
 
 // Print the response
@@ -45,7 +46,7 @@ use APIVerve\Weatherforecast\Exceptions\APIException;
 use APIVerve\Weatherforecast\Exceptions\ValidationException;
 
 try {
-    $response = $client->execute(['city' => 'San Francisco', 'forecast' => true]);
+    $response = $client->execute(['city' => 'San Francisco', 'forecast' => true, 'hourly' => true]);
     print_r($response['data']);
 } catch (ValidationException $e) {
     echo "Validation error: " . implode(', ', $e->getErrors());
