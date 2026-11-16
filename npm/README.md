@@ -1,6 +1,6 @@
 # Weather API
 
-Weather is a current weather API that reports conditions for any city name or zip code: real-time temperature and wind speed with compass direction, in both metric and imperial units, with the location's coordinates, time zone and local time, day or night, and a UV risk level. Paid plans add a 7-day forecast with daily highs, lows, rain chance and conditions for the week ahead.
+Weather is a current weather API that reports conditions for any city name or zip code: real-time temperature and wind speed with compass direction, in both metric and imperial units, with the location's coordinates, time zone and local time, day or night, and a UV risk level. Paid plans add a 7-day forecast with daily highs, lows, rain chance and conditions for the week ahead, and an optional hourly forecast.
 
 [![npm version](https://img.shields.io/npm/v/@apiverve/weatherforecast.svg)](https://www.npmjs.com/package/@apiverve/weatherforecast)
 
@@ -58,7 +58,8 @@ Using the API is simple. All you have to do is make a request. The API will retu
 ```javascript
 var query = {
   city: "San Francisco",
-  forecast: true
+  forecast: true,
+  hourly: false
 };
 
 api.execute(query, function (error, data) {
@@ -79,7 +80,8 @@ You can also use promises to make requests. The API returns a promise that you c
 ```javascript
 var query = {
   city: "San Francisco",
-  forecast: true
+  forecast: true,
+  hourly: false
 };
 
 api.execute(query)
@@ -101,7 +103,8 @@ You can also use async/await to make requests. The API returns a promise that yo
 async function makeRequest() {
     var query = {
   city: "San Francisco",
-  forecast: true
+  forecast: true,
+  hourly: false
 };
 
     try {

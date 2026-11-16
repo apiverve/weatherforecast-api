@@ -16,7 +16,8 @@ const api = new weatherforecastAPI({
 // Example query
 var query = {
   city: "San Francisco",
-  forecast: true
+  forecast: true,
+  hourly: false
 };
 
 // Make the API request using callback
